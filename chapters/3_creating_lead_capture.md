@@ -33,6 +33,39 @@ Replace the trailing part of the URL with your API key.
 
 This will let your frontend authenticate itself with Your CRM.
 
+## Enable CORs access on your CRM
+
+Exec into your docker container.
+
+```shell 
+docker exec -it espocrm /bin/bash
+```
+
+Run the following to install vi editor.
+
+```shell
+apt-get update && apt-get install vim
+```
+
+Edit the CRM configuration file to add a new option
+
+```shell
+vi data/config.php
+```
+
+Add the following line at the end before the bracket closes.
+
+```php
+ 'leadCaptureAllowOrigin' => '*',
+```
+
+Save the file and run the following commands from the CRM docker shell.
+
+```
+php clear_cache.php
+php rebuild.php
+```
+
 Try to enter a few leads from the Contact Us page or Car Details Page on your webapp.
 
 They should start appearing on the CRM.
