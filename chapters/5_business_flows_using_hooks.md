@@ -4,7 +4,7 @@
 
 File path: custom/Espo/Custom/Hooks/Lead/LeadHooks.php
 
-```
+```php
 namespace Espo\Custom\Hooks\Lead;
 
 use Espo\Core\ORM\EntityManager;
@@ -35,6 +35,7 @@ class LeadHooks
         $rand = rand(0, sizeof($userIds));
         return $userIds[$rand];
     }
+}
 ```
 
 ## 2) Create demo meetings for the clients
@@ -43,7 +44,7 @@ Let' now schedule meetings for all the leads who request a demo from the website
 
 File path: custom/Espo/Custom/Hooks/Lead/LeadHooks.php
 
-```
+```php
 
 if ($lead->get('leadType') == 'Demo') {
     $meeting = $this->entityManager->getEntity('Meeting');
@@ -67,7 +68,7 @@ To handle other leads who reach us via contact us page let's add the following m
 
 File path: custom/Espo/Custom/Hooks/Lead/LeadHooks.php
 
-```
+```php
 
 else{
     $call = $this->entityManager->getEntity('Call');

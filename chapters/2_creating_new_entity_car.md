@@ -7,7 +7,7 @@ Let's now create a new entity called Car by writing a new custom pack.
 
 File path: custom/Espo/Custom/Entities/Car.php
 
-```
+```php
 <?php
 
 namespace Espo\Custom\Entities;
@@ -15,8 +15,6 @@ namespace Espo\Custom\Entities;
 class Car extends \Espo\Core\Templates\Entities\Base
 {
     public const ENTITY_TYPE = 'Car';
-
-    protected $entityType = 'Car';
 }
 ```
 
@@ -24,7 +22,7 @@ class Car extends \Espo\Core\Templates\Entities\Base
 
 File path: custom/Espo/Custom/Controllers/Car.php
 
-```
+```php
 <?php
 
 namespace Espo\Custom\Controllers;
@@ -37,7 +35,7 @@ class Car extends \Espo\Core\Templates\Controllers\Base
 
 File path: custom/Espo/Custom/Repositories/Car.php
 
-```
+```php
 <?php
 
 namespace Espo\Custom\Repositories;
@@ -53,7 +51,7 @@ class Car extends \Espo\Core\Templates\Repositories\Base
 
 File path: custom/Espo/Custom/Resources/metadata/scopes/Car.json
 
-```
+```json
 {
     "entity": true,
     "layouts": true,
@@ -83,7 +81,7 @@ Lets now add fields to our entity Car. We need to write a entity defination file
 
 File path: custom/Espo/Custom/Resources/metadata/entityDefs/Car.json
 
-```
+```json
 {
     "fields": {
         "name": {
@@ -223,7 +221,7 @@ Once the fields are defined we need to give user friendly labels to the fields a
 
 File path: custom/Espo/Custom/Resources/i18n/en_US
 
-```
+```json
 {
     "fields": {
         "model": "Model",
@@ -256,7 +254,7 @@ To show the fields in the UI we need to write the layout file.
 
 File path: custom/Espo/Custom/Resources/layouts/Car/detail.js
 
-```
+```json
 [
     {
         "rows": [
