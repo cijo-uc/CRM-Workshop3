@@ -1,6 +1,6 @@
 # CRM-Workshop 3 | Introduction EspoCRM
 
-# CRM Workshop 2
+# CRM Workshop 3
 
 One Day workshop on building and Integrating Your Apps with a CRM.
 
